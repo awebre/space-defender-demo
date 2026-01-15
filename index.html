@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Defender - Live Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Space Defender - Live Code Editor</h1>
+            <div class="controls">
+                <button id="runCode" class="btn btn-primary">Run Code</button>
+                <button id="resetCode" class="btn btn-secondary">Reset to Default</button>
+                <div class="challenges-dropdown">
+                    <button id="challengesBtn" class="btn btn-accent">Quick Challenges ▼</button>
+                    <div id="challengesMenu" class="challenges-menu">
+                        <button class="challenge-item" data-challenge="superSpeed">Super Speed</button>
+                        <button class="challenge-item" data-challenge="rainbowMode">Rainbow Mode</button>
+                        <button class="challenge-item" data-challenge="rapidFire">Rapid Fire</button>
+                        <button class="challenge-item" data-challenge="biggerShip">Bigger Ship</button>
+                        <button class="challenge-item" data-challenge="slowMotion">Slow Motion</button>
+                        <button class="challenge-item" data-challenge="doublePoints">Double Points</button>
+                    </div>
+                </div>
+                <button id="toggleInstructions" class="btn btn-info">ℹ️ Instructions</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-panel">
+                <div class="editor-header">
+                    <h2>Code Editor</h2>
+                    <span class="status-indicator" id="statusIndicator">Ready</span>
+                </div>
+                <textarea id="codeEditor" spellcheck="false"></textarea>
+                <div id="errorDisplay" class="error-display"></div>
+            </div>
+
+            <div class="game-panel">
+                <div class="game-header">
+                    <h2>Game Preview</h2>
+                    <div class="score-display">
+                        <span>Score: <span id="scoreValue">0</span></span>
+                        <span>Lives: <span id="livesValue">3</span></span>
+                    </div>
+                </div>
+                <canvas id="gameCanvas"></canvas>
+                <div id="gameOverlay" class="game-overlay">
+                    <div id="gameOverMessage" class="game-over-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="instructionsPanel" class="instructions-panel">
+            <h3>How to Use</h3>
+            <ol>
+                <li>Modify the values in the <code>GAME_CONFIG</code> object on the left</li>
+                <li>Click "Run Code" to see your changes instantly</li>
+                <li>Try changing:
+                    <ul>
+                        <li><code>playerSpeed</code> - How fast your ship moves (try 20!)</li>
+                        <li><code>playerColor</code> - Your ship's color (try '#ff00ff' for pink!)</li>
+                        <li><code>playerSize</code> - How big your ship is (try 80!)</li>
+                        <li><code>enemySpeed</code> - How fast enemies fall (try 0.5 for slow motion!)</li>
+                        <li><code>scoreMultiplier</code> - Points per enemy (try 100!)</li>
+                    </ul>
+                </li>
+                <li>Use arrow keys or WASD to move, Space to shoot</li>
+                <li>Click "Quick Challenges" for preset modifications</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>
