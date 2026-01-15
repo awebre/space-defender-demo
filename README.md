@@ -33,7 +33,7 @@ An interactive coding demonstration for middle school career day. Students can m
 ### Minutes 2-3: Interactive Coding (2 minutes)
 - **Invite student:** "Who wants to try? Come up and change something!"
 - **Suggestions for students:**
-  1. Change `playerColor: '#00ff00'` to `playerColor: '#ff00ff'` (pink ship!)
+  1. Change `playerColor: 'green'` to `playerColor: 'pink'` (pink ship!)
   2. Change `playerSize: 40` to `playerSize: 80` (bigger ship!)
   3. Change `scoreMultiplier: 10` to `scoreMultiplier: 100` (huge points!)
 - **Rotate:** Let 2-3 students make one change each
@@ -80,7 +80,7 @@ An interactive coding demonstration for middle school career day. Students can m
 
 **Easy Changes (30 seconds):**
 - `playerSpeed` - Movement speed (try 1-50)
-- `playerColor` - Ship color (hex codes like '#ff00ff' or names like 'blue')
+- `playerColor` - Ship color (color names like 'blue', 'pink', 'red', etc.)
 - `playerSize` - Ship size in pixels (try 20-100)
 - `enemySpeed` - How fast enemies fall (try 0.5-10)
 - `scoreMultiplier` - Points per enemy (try 1-1000)

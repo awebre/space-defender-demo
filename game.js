@@ -2,19 +2,19 @@
 const GAME_CONFIG = {
   // Player settings
   playerSpeed: 5, // How fast the player ship moves (pixels per frame)
-  playerColor: "#00ff00", // Player ship color (hex code or color name)
+  playerColor: "green", // Player ship color (color name or hex code)
   playerSize: 40, // Size of the player ship (pixels)
 
   // Enemy settings
-  enemySpeed: 2, // How fast enemies fall (pixels per frame)
+  enemySpeed: 0.8, // How fast enemies fall (pixels per frame)
   enemySpawnRate: 60, // Frames between enemy spawns (lower = more enemies)
   enemySize: 30, // Size of enemies (pixels)
-  enemyColor: "#ff0000", // Enemy color
+  enemyColor: "red", // Enemy color
 
   // Bullet settings
   bulletSpeed: 8, // How fast bullets travel (pixels per frame)
   bulletSize: 5, // Size of bullets (pixels)
-  bulletColor: "#ffff00", // Bullet color
+  bulletColor: "yellow", // Bullet color
   bulletCooldown: 15, // Frames between shots (lower = faster shooting)
 
   // Game settings
@@ -64,12 +64,17 @@ class Player {
 
   reset() {
     this.x = canvas.width / 2;
-    this.y = canvas.height - 60;
+    // Constrain player to bottom 25% of canvas
+    const playableAreaTop = canvas.height * 0.75;
+    const playableAreaBottom = canvas.height - 60;
+    this.y = playableAreaBottom;
     this.width = GAME_CONFIG.playerSize;
     this.height = GAME_CONFIG.playerSize;
     this.speed = GAME_CONFIG.playerSpeed;
     this.color = GAME_CONFIG.playerColor;
     this.lastShot = 0;
+    this.playableAreaTop = playableAreaTop;
+    this.playableAreaBottom = playableAreaBottom;
   }
 
   update() {
@@ -89,14 +94,16 @@ class Player {
       );
     }
     if (keys["ArrowUp"] || keys["w"] || keys["W"]) {
+      // Move forward (up) but stay within bottom 25% of canvas
       this.y = Math.max(
-        this.height / 2,
+        this.playableAreaTop + this.height / 2,
         this.y - this.speed * GAME_CONFIG.gameSpeed
       );
     }
     if (keys["ArrowDown"] || keys["s"] || keys["S"]) {
+      // Move backward (down) but stay within bottom 25% of canvas
       this.y = Math.min(
-        canvas.height - this.height / 2,
+        this.playableAreaBottom - this.height / 2,
         this.y + this.speed * GAME_CONFIG.gameSpeed
       );
     }
@@ -412,21 +419,25 @@ function endGame(won) {
 
   const overlay = document.getElementById("gameOverlay");
   const message = document.getElementById("gameOverMessage");
+  const playAgainBtn = document.getElementById("playAgainBtn");
 
   if (won) {
     message.textContent = "🎉 You Won! 🎉";
     message.style.color = "#4CAF50";
   } else {
-    message.textContent = "Game Over!\nPress Reset to play again";
+    message.textContent = "Game Over!";
     message.style.color = "#ff4444";
   }
 
+  playAgainBtn.style.display = "block";
   overlay.classList.add("show");
 }
 
 function hideGameOver() {
   const overlay = document.getElementById("gameOverlay");
+  const playAgainBtn = document.getElementById("playAgainBtn");
   overlay.classList.remove("show");
+  playAgainBtn.style.display = "none";
 }
 
 function resetGame() {

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Defender - Live Code Editor</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
 </head>
 <body>
     <div class="container">
@@ -34,7 +36,7 @@
                     <h2>Code Editor</h2>
                     <span class="status-indicator" id="statusIndicator">Ready</span>
                 </div>
-                <textarea id="codeEditor" spellcheck="false"></textarea>
+                <div id="codeEditorContainer"></div>
                 <div id="errorDisplay" class="error-display"></div>
             </div>
 
@@ -48,7 +50,10 @@
                 </div>
                 <canvas id="gameCanvas"></canvas>
                 <div id="gameOverlay" class="game-overlay">
-                    <div id="gameOverMessage" class="game-over-message"></div>
+                    <div class="game-over-content">
+                        <div id="gameOverMessage" class="game-over-message"></div>
+                        <button id="playAgainBtn" class="btn btn-primary" style="margin-top: 20px; display: none;">Play Again</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,7 +66,7 @@
                 <li>Try changing:
                     <ul>
                         <li><code>playerSpeed</code> - How fast your ship moves (try 20!)</li>
-                        <li><code>playerColor</code> - Your ship's color (try '#ff00ff' for pink!)</li>
+                        <li><code>playerColor</code> - Your ship's color (try 'pink' or 'blue'!)</li>
                         <li><code>playerSize</code> - How big your ship is (try 80!)</li>
                         <li><code>enemySpeed</code> - How fast enemies fall (try 0.5 for slow motion!)</li>
                         <li><code>scoreMultiplier</code> - Points per enemy (try 100!)</li>
@@ -73,6 +78,8 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
     <script src="game.js"></script>
     <script src="editor.js"></script>
 </body>
