@@ -17,28 +17,27 @@ const playAgainBtn = document.getElementById("playAgainBtn");
 const defaultCode = `// Game Configuration - MODIFY THESE VALUES TO CHANGE THE GAME!
 const GAME_CONFIG = {
     // Player settings
-    playerSpeed: 5,           // How fast the player ship moves (pixels per frame)
-    playerColor: 'green',    // Player ship color (color name or hex code)
-    playerSize: 40,           // Size of the player ship (pixels)
-    
+    playerSpeed: 2,         // How fast the player ship moves (pixels per frame)
+    playerColor: "green",   // Player ship color (color name or hex code)
+    playerSize: 40,         // Size of the player ship (pixels)
+
     // Enemy settings
-    enemySpeed: 0.8,          // How fast enemies fall (pixels per frame)
-    enemySpawnRate: 60,       // Frames between enemy spawns (lower = more enemies)
-    enemySize: 30,            // Size of enemies (pixels)
-    enemyColor: 'red',        // Enemy color
-    
+    enemySpeed: 0.8,        // How fast enemies fall (pixels per frame)
+    enemySpawnRate: 360,    // Frames between enemy spawns (lower = more enemies)
+    enemySize: 30,          // Size of enemies (pixels)
+    enemyColor: "red",      // Enemy color
+
     // Bullet settings
-    bulletSpeed: 8,           // How fast bullets travel (pixels per frame)
-    bulletSize: 5,            // Size of bullets (pixels)
-    bulletColor: 'yellow',    // Bullet color
-    bulletCooldown: 15,       // Frames between shots (lower = faster shooting)
-    
+    bulletSpeed: 0.5,       // How fast bullets travel (pixels per frame)
+    bulletSize: 5,          // Size of bullets (pixels)
+    bulletColor: "yellow",  // Bullet color
+    bulletCooldown: 120,    // Frames between shots (lower = faster shooting)
+
     // Game settings
     scoreMultiplier: 10,     // Points per enemy destroyed
-    gameSpeed: 1,             // Overall game speed multiplier
-    lives: 3,                 // Starting number of lives
-    invulnerabilityTime: 120, // Frames of invulnerability after being hit
-    rainbowMode: false        // Enable rainbow color effects
+    gameSpeed: 1,            // Overall game speed multiplier
+    lives: 3,                // Starting number of lives
+    invulnerabilityTime: 120 // Frames of invulnerability after being hit
 };`;
 
 // Theme management
