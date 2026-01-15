@@ -12,22 +12,6 @@
     <div class="container">
         <header>
             <h1>🚀 Space Defender - Live Code Editor</h1>
-            <div class="controls">
-                <button id="runCode" class="btn btn-primary">Run Code</button>
-                <button id="resetCode" class="btn btn-secondary">Reset to Default</button>
-                <div class="challenges-dropdown">
-                    <button id="challengesBtn" class="btn btn-accent">Quick Challenges ▼</button>
-                    <div id="challengesMenu" class="challenges-menu">
-                        <button class="challenge-item" data-challenge="superSpeed">Super Speed</button>
-                        <button class="challenge-item" data-challenge="rainbowMode">Rainbow Mode</button>
-                        <button class="challenge-item" data-challenge="rapidFire">Rapid Fire</button>
-                        <button class="challenge-item" data-challenge="biggerShip">Bigger Ship</button>
-                        <button class="challenge-item" data-challenge="slowMotion">Slow Motion</button>
-                        <button class="challenge-item" data-challenge="doublePoints">Double Points</button>
-                    </div>
-                </div>
-                <button id="toggleInstructions" class="btn btn-info">ℹ️ Instructions</button>
-            </div>
         </header>
 
         <div class="main-content">
@@ -35,6 +19,60 @@
                 <div class="editor-header">
                     <h2>Code Editor</h2>
                     <span class="status-indicator" id="statusIndicator">Ready</span>
+                </div>
+                <div class="editor-controls">
+                    <button id="runCode" class="btn btn-primary">Run Code</button>
+                    <button id="resetCode" class="btn btn-secondary">Reset to Default</button>
+                    <div class="theme-dropdown">
+                        <button id="themeBtn" class="btn btn-info">🎨 Theme: Monokai ▼</button>
+                        <div id="themeMenu" class="theme-menu">
+                            <div class="theme-section">
+                                <div class="theme-section-title">Dark Themes</div>
+                                <button class="theme-item" data-theme="monokai">Monokai</button>
+                                <button class="theme-item" data-theme="dracula">Dracula</button>
+                                <button class="theme-item" data-theme="darcula">Darcula</button>
+                                <button class="theme-item" data-theme="material">Material</button>
+                                <button class="theme-item" data-theme="material-darker">Material Darker</button>
+                                <button class="theme-item" data-theme="material-ocean">Material Ocean</button>
+                                <button class="theme-item" data-theme="material-palenight">Material Palenight</button>
+                                <button class="theme-item" data-theme="3024-night">3024 Night</button>
+                                <button class="theme-item" data-theme="blackboard">Blackboard</button>
+                                <button class="theme-item" data-theme="cobalt">Cobalt</button>
+                                <button class="theme-item" data-theme="hopscotch">Hopscotch</button>
+                                <button class="theme-item" data-theme="pastel-on-dark">Pastel on Dark</button>
+                                <button class="theme-item" data-theme="ayu-dark">Ayu Dark</button>
+                                <button class="theme-item" data-theme="ayu-mirage">Ayu Mirage</button>
+                                <button class="theme-item" data-theme="base16-dark">Base16 Dark</button>
+                                <button class="theme-item" data-theme="gruvbox-dark">Gruvbox Dark</button>
+                                <button class="theme-item" data-theme="nord">Nord</button>
+                                <button class="theme-item" data-theme="oceanic-next">Oceanic Next</button>
+                                <button class="theme-item" data-theme="seti">Seti</button>
+                                <button class="theme-item" data-theme="tomorrow-night-bright">Tomorrow Night Bright</button>
+                                <button class="theme-item" data-theme="tomorrow-night-eighties">Tomorrow Night Eighties</button>
+                                <button class="theme-item" data-theme="twilight">Twilight</button>
+                                <button class="theme-item" data-theme="vibrant-ink">Vibrant Ink</button>
+                                <button class="theme-item" data-theme="zenburn">Zenburn</button>
+                                <button class="theme-item" data-theme="the-matrix">The Matrix</button>
+                                <button class="theme-item" data-theme="icecoder">Icecoder</button>
+                                <button class="theme-item" data-theme="rubyblue">Rubyblue</button>
+                                <button class="theme-item" data-theme="xq-dark">XQ Dark</button>
+                            </div>
+                            <div class="theme-section">
+                                <div class="theme-section-title">Light Themes</div>
+                                <button class="theme-item" data-theme="default">Default</button>
+                                <button class="theme-item" data-theme="3024-day">3024 Day</button>
+                                <button class="theme-item" data-theme="eclipse">Eclipse</button>
+                                <button class="theme-item" data-theme="solarized">Solarized</button>
+                                <button class="theme-item" data-theme="xq-light">XQ Light</button>
+                                <button class="theme-item" data-theme="base16-light">Base16 Light</button>
+                                <button class="theme-item" data-theme="duotone-light">Duotone Light</button>
+                                <button class="theme-item" data-theme="paraiso-light">Paraiso Light</button>
+                                <button class="theme-item" data-theme="yeti">Yeti</button>
+                                <button class="theme-item" data-theme="neat">Neat</button>
+                                <button class="theme-item" data-theme="elegant">Elegant</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="codeEditorContainer"></div>
                 <div id="errorDisplay" class="error-display"></div>
@@ -47,6 +85,20 @@
                         <span>Score: <span id="scoreValue">0</span></span>
                         <span>Lives: <span id="livesValue">3</span></span>
                     </div>
+                </div>
+                <div class="game-controls">
+                    <div class="challenges-dropdown">
+                        <button id="challengesBtn" class="btn btn-accent">Quick Challenges ▼</button>
+                        <div id="challengesMenu" class="challenges-menu">
+                            <button class="challenge-item" data-challenge="superSpeed">Super Speed</button>
+                            <button class="challenge-item" data-challenge="rainbowMode">Rainbow Mode</button>
+                            <button class="challenge-item" data-challenge="rapidFire">Rapid Fire</button>
+                            <button class="challenge-item" data-challenge="biggerShip">Bigger Ship</button>
+                            <button class="challenge-item" data-challenge="slowMotion">Slow Motion</button>
+                            <button class="challenge-item" data-challenge="doublePoints">Double Points</button>
+                        </div>
+                    </div>
+                    <button id="toggleInstructions" class="btn btn-info">ℹ️ Instructions</button>
                 </div>
                 <canvas id="gameCanvas"></canvas>
                 <div id="gameOverlay" class="game-overlay">

@@ -22,7 +22,7 @@ header {
   background: rgba(0, 0, 0, 0.3);
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
@@ -30,12 +30,6 @@ header {
 header h1 {
   font-size: 24px;
   font-weight: bold;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-  align-items: center;
 }
 
 .btn {
@@ -94,7 +88,8 @@ header h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.challenges-dropdown {
+.challenges-dropdown,
+.theme-dropdown {
   position: relative;
 }
 
@@ -141,6 +136,67 @@ header h1 {
   border-radius: 0 0 5px 5px;
 }
 
+.theme-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  min-width: 250px;
+  max-height: 600px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.theme-menu.active {
+  display: block;
+}
+
+.theme-section {
+  padding: 10px 0;
+}
+
+.theme-section:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-section-title {
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-item {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+  color: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.theme-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-item.active {
+  background: rgba(76, 175, 80, 0.3);
+  color: #4caf50;
+  font-weight: 600;
+}
+
 .main-content {
   display: flex;
   flex: 1;
@@ -156,6 +212,11 @@ header h1 {
   padding: 15px;
 }
 
+.editor-panel .btn {
+  font-size: 13px;
+  padding: 8px 16px;
+}
+
 .editor-header {
   display: flex;
   justify-content: space-between;
@@ -165,6 +226,14 @@ header h1 {
 
 .editor-header h2 {
   font-size: 18px;
+}
+
+.editor-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .status-indicator {
@@ -229,6 +298,11 @@ header h1 {
   position: relative;
 }
 
+.game-panel .btn {
+  font-size: 13px;
+  padding: 8px 16px;
+}
+
 .game-header {
   display: flex;
   justify-content: space-between;
@@ -238,6 +312,14 @@ header h1 {
 
 .game-header h2 {
   font-size: 18px;
+}
+
+.game-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .score-display {
